@@ -1,0 +1,17 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Editing Page: {{ entry.entry_name }}
+{% endblock %}
+
+{% block body %}
+    <h1>Editing Entry "{{ entry.entry_name }}"</h1>
+    <form action="{{ url_for('edit', identity=entry.id) }}" method="post">
+        <label for="comments">Content: </label><br>
+        <textarea id="comments" name="content" rows="10" cols="50">{{ entry.content }}</textarea><br><br>
+
+        <input type="submit" id="submit" value="Save">
+    </form>
+    <a href="{{ url_for('index') }}">Back to Home</a>
+
+{% endblock %}

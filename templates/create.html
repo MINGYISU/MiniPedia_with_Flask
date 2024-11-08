@@ -1,0 +1,20 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Create New Page
+{% endblock %}
+
+{% block body %}
+    <h1>Create New Page</h1>
+    <form action="{{ url_for('create') }}" method="post">
+        <label for="name">Title: </label><br>
+        <input type="text" id="name" name="name"><br><br>
+
+        <label for="comments">Content: </label><br>
+        <textarea id="comments" name="content" rows="10" cols="50"></textarea><br><br>
+
+        <input type="submit" id="submit" value="Save">
+    </form>
+    <a href="{{ url_for('index') }}">Back to Home</a>
+
+{% endblock %}

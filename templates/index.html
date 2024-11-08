@@ -1,0 +1,22 @@
+{% extends 'layout.html' %}
+
+{% block title %}
+    Encyclopedia
+{% endblock %}
+
+{% block body %}
+    <h1>All Pages</h1>
+
+    <ul>
+        {% if entries|length < 1 %}
+            <h4>No Entires Found!</h4>
+        {% else %}
+            {% for entry in entries %}
+                <li>
+                    <a href="{{ url_for('display', identity=entry.id) }}">{{ entry.entry_name }}</a>
+                </li>
+            {% endfor %}
+        {% endif %}
+    </ul>
+
+{% endblock %}

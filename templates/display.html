@@ -1,0 +1,14 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    {{ entry.entry_name }}
+{% endblock %}
+
+{% block body %}
+    <div>{{ entry.entry_name }}</div>
+    <div>{{ entry.content }}</div>
+    <div>Last Modified: {{ entry.date_created }}</div>
+    
+    <a href="{{ url_for('edit', identity=entry.id) }}">EDIT</a>
+    <a href="{{ url_for('index') }}">Back To Home</a>
+{% endblock %}
