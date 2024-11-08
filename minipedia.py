@@ -3,9 +3,6 @@ from flask_sqlalchemy import SQLAlchemy
 from sqlalchemy.exc import SQLAlchemyError
 from datetime import datetime
 
-from random import choice
-from markdown2 import markdown
-
 app = Flask(__name__)
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///source.db'
 db = SQLAlchemy(app)
